@@ -64,3 +64,10 @@ Also remember, graphql requests are post requests, not get requests.
 -   technically, graphql can accept get requests, however you'd need to pass the query object as a query parameter, so it's just easier to make your request a post request so you can pass in body.
 
 You'll notice the `schema.gql` file that was auto-generated on server build.
+This schema.gql file will define types using scalar types. Our typescript types get converted into scalar types inside our schema.gql.
+You'll notice that our 'number' types in typescript are turned into Float types inside the schema.gql file. Should you desire to configure this, you can do so in the graphQLModule config inside our app.module.ts file.
+
+## When might you want to use the @Field decorator in our entities ?
+
+-   You want more control between ts types converted to schema.gql scalars (numbers specifically)
+-   You want more control over the ID scalar.

@@ -78,3 +78,25 @@ You'll notice that our 'number' types in typescript are turned into Float types 
     (i.e. best practice of http get method is to NOT write data)
 
 While graphql Queries are for fetching data or querying data, graphql mutations are designed to mutate or write data.
+
+## Auto-Validation of Input Data
+
+Validation pipes
+in main.ts => app.useGlobalPipes(new ValidationPipe());
+`npm i class-validator class-transformer`
+@MinLength(3) for example
+check out nest js validation documentation for more examples and info.
+
+# Advanced Graphql Features
+
+## Field Resolvers
+
+Good for resolving relations - like mongo references or sql relations.
+
+## Field Middleware
+
+-   Meant for simple operations. not async or anything like that. (like toUpperCase or toLowerCase)
+    applied as a @Field decorator like this:
+    `@Field({middleware: [myMiddleware]})`
+
+## Custom Scalar Types
